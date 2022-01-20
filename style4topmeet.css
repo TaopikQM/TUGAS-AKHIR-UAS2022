@@ -1,0 +1,372 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    background: #f6f7f9;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 100%;
+    width: 100%;
+}
+
+/*Star Navbar*/
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    transition: all .3s ease;
+    z-index: 999;
+}
+
+nav.active {
+    background: white;
+}
+
+
+nav .container{
+    display: flex;
+    align-items: center;
+    grid-gap: 64px;
+}
+
+nav.active .brand {
+    color: #4267cf;
+}
+
+nav .brand {
+    font-size: 28px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    color: white;
+    grid-gap: 8px;
+}
+
+nav .logo{
+    width: min(5em, 10vw);
+    max-width: 3px;
+}
+
+nav .nav-menu{
+    display: flex;
+    grid-gap: 36px;
+    flex: 1 1 0;
+    align-items: center;
+}
+
+nav.active .nav-menu li a{
+    color: #4267cf;
+}
+
+nav .nav-menu li a{
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    color: white;
+    padding: 3px 0;
+}
+
+nav.active .nav-menu li:not(.login, .signup) a::before{
+    background: #4267cf;
+}
+
+nav .nav-menu li:not(.login, .signup) a::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background: white;
+    width: 0;
+    transition: all .3s ease;
+}
+
+nav .nav-menu li:not(.login, .signup) a.active::before,
+nav .nav-menu li:not(.login, .signup) a:hover::before{
+    width: 100%;
+}
+
+nav .login{
+    margin-left: auto;
+}
+
+nav .nav-menu .signup a,
+nav.active .nav-menu .signup a{
+    display: inline-block;
+    padding: 10px 16px;
+    background: #6381d7;
+    color: white;
+}
+
+nav .nav-menu .signup a:hover{
+    background: #839be0;
+}
+
+nav .nav-menu .signup a:active{
+    background: #2e51b5;
+}
+/*End Navbar*/
+
+
+/*Star Header*/
+header{
+    background: #4267cf;
+    padding: 144px 0;
+    text-align: center;
+}
+
+header h1{
+    color: white;
+    max-width: 800px;
+    font-weight: 600;
+    font-size: 48px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    margin: 0 auto;
+    
+}
+
+header h3{
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+/*End Header*/
+
+
+/*Star Top Post*/
+.top-post{
+    margin-top: -96px;
+}
+
+
+.room-list{
+    padding: 20px;
+    background: rgb(233, 232, 232);
+    display: flex;
+    grid-gap: 20px;
+    flex-wrap: wrap;
+}
+
+.container .hall h2{
+    color: #4267cf;
+    font-size: xx-large;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+}
+
+.room-list .room-card{
+    position: relative;
+    flex-grow: 1;
+    width: 290px;
+    margin-top: 0px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+}
+
+.room-list .room-card .top{
+    position: relative;
+}
+
+.room-list .room-card .buttom{
+    position: relative;
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+.room-card .buttom .room-main-price p{
+    padding-left: 20px;
+}
+
+.room-card .buttom .room-capacity{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.room-card .buttom .room-capacity p{
+    padding-left: 8px;
+}
+
+button{
+    display: inline-block;
+    background: #6381d7;
+    color: #fff;
+    border: thin solid #565655;
+    font-size: clamp(1.3rem, 2vw, 5rem);
+    padding: 0.5em 1em;
+    border-radius: calc(100px + 2em);
+    margin-top: -3em;
+    margin-bottom: 2em;
+}
+/*End Top Post*/
+
+/*Star Main*/
+form{
+    margin-top: -96px;
+}
+
+form .booking{
+    padding: 20px;
+    background: rgb(233, 232, 232);
+    color: #4267cf;
+    display: flex;
+    grid-gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+form .booking input[type="text"], textarea, select {
+    position: relative;
+    padding: 10px;
+    width: 310px;
+    background: #fff;
+    border: thin solid #565655;
+    font-size: 10pt;
+    margin: 6px 0px;
+}
+
+form .booking input[type="date"]{
+    position: relative;
+    padding: 8px;
+    width: 150px;
+    background: #fff;
+    border: thin solid #565655;
+    font-size: 13px;
+    margin: 6px 0px;
+
+}
+
+form .booking input[type="time"]{
+    position: relative;
+    padding: 8px;
+    width: 120px;
+    background: #fff;
+    border: thin solid #565655;
+    font-size: 13px;
+    margin: 6px 0px;
+
+}
+
+form .booking .metode select{
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    background: #fff;
+    border: thin solid #565655;
+    font-size: 10pt;
+    margin: 6px 0px;
+}
+
+form .booking button{
+    display: inline-block;
+    background: #6381d7;
+    color: #fff;
+    border: thin solid #565655;
+    font-size: clamp(1.3rem, 2vw, 5rem);
+    padding: 0.5em 1em;
+    border-radius: calc(100px + 2em);
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+/*End Main*/
+
+/*Star Kontak*/
+form .book {
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 10px;
+    background: rgb(233, 232, 232);
+    color: #4267cf;
+    grid-gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+form .book h2 {
+    color: #4267cf;
+    font-size: xx-large;
+    padding: 0.5em 1em;
+}
+
+form .book input[type="text"], textarea, select {
+    position: relative;
+    padding: 10px;
+    width: 310px;
+    background: #fff;
+    border: thin solid #565655;
+    font-size: 10pt;
+    margin: 10px 0px;
+}
+
+form .book input[type="radio"] {
+    position: relative;
+    margin: 10px 3px;
+}
+
+form .book input[type="checkbox"] {
+    position: relative;
+    margin: 10px 4px;
+}
+/*End Kontak*/
+
+/* FOOTER */
+footer {
+    background: #122047;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 58px;
+}
+
+footer .container{
+    display: flex;
+    align-items: center;
+    grid-gap: 45px;
+}
+
+footer .logo{
+    position: relative;
+    width: min(5em, 10vw);
+    max-width: 3px;
+}
+
+footer .brand {
+    position: relative;
+    font-size: 20px;
+    font-weight: 200;
+    display: flex;
+    color: white;
+}
+
+footer .container p {
+    position: relative;
+    padding-left: 700px;
+    color: white;
+}
+/* FOOTER */
